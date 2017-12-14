@@ -334,6 +334,7 @@
 ;;;
 (defvar olm-summary-mode-map nil)
 (defvar olm-summary-mode-hook nil)
+(defvar olm-summary-mode-quit-hook nil)
 (defvar olm-summary-scroll-lines 12)
 
 (unless olm-summary-mode-map
@@ -366,7 +367,8 @@
 (defun olm-summary-quit ()
   (interactive)
   (delete-other-windows-vertically)
-  (quit-window))
+  (quit-window)
+  (run-hooks 'olm-summary-mode-quit-hook))
 
 (defun olm-summary-mode ()
   (interactive)

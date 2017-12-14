@@ -38,7 +38,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;; olm-folder-alist
-;;; 
+;;;
 (defvar olm-folder-alist nil)
 
 (defun olm-folder-names ()
@@ -52,7 +52,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;;  olm command
-;;; 
+;;;
 (defun olm ()
   (interactive)
   (olm-init)
@@ -115,7 +115,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;; general helper functions
-;;; 
+;;;
 (defun olm-do-command (command &optional buf)
   (let ((buf (or buf (get-buffer-create "*Messages*"))))
     (call-process olm-ruby-executable nil buf nil
@@ -153,7 +153,7 @@
                        (line-end-position)
                        'read-only
                        nil))
-  (save-excursion    
+  (save-excursion
     (narrow-to-region (progn
                         (goto-line 2)
                         (point))
@@ -182,7 +182,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;; buffers
-;;; 
+;;;
 (defun olm-buf-ls ()
   (get-buffer-create "*olm-ls*"))
 
@@ -264,7 +264,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;; olm-message
-;;; 
+;;;
 (defvar olm-message-mode-map nil)
 (defvar olm-message-mode-hook nil)
 
@@ -651,4 +651,3 @@
 
 (provide 'olm)
 ;;; olm.el ends here
-

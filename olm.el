@@ -76,7 +76,7 @@
               (goto-char (point-min))
               (let ((point (point)))
                 (forward-word)
-                (string-to-int (buffer-substring point (point))))))
+                (string-to-number (buffer-substring point (point))))))
          (sbuf (let ((buf (olm-buf-summary)))
                  (with-current-buffer buf
                    (setq-local buffer-read-only nil)
